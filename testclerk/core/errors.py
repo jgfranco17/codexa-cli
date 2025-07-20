@@ -11,7 +11,8 @@ class ExitCode:
     INPUT_ERROR: Final[int] = 2
     ENVIRONMENT_ERROR: Final[int] = 3
     EXECUTION__ERROR: Final[int] = 4
-    GENERATION_ERROR: Final[int] = 5
+    ACCESS_ERROR: Final[int] = 5
+    GENERATION_ERROR: Final[int] = 6
 
 
 class TestClerkBaseError(Exception):
@@ -84,7 +85,7 @@ class TestClerkExecutionError(TestClerkBaseError):
         super().__init__(self.message, ExitCode.GENERATION_ERROR, help_text)
 
 
-class TestClerkGenerationError(TestClerkBaseError):
+class TestClerkAccessorError(TestClerkBaseError):
     """CLI LLM generation error class."""
 
     def __init__(

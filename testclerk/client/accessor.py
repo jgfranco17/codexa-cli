@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-from testclerk.core.errors import TestClerkGenerationError
+from testclerk.core.errors import TestClerkAccessorError
 
 
 class RemoteAIAccessor:
@@ -17,9 +17,9 @@ class RemoteAIAccessor:
         model: str = "deepseek/deepseek-r1:free",
     ) -> None:
         if not api_key:
-            raise ValueError("API key is required")
+            raise TestClerkAccessorError("API key is required")
         if not prompt:
-            raise ValueError("Accessor requires setup prompt")
+            raise TestClerkAccessorError("Accessor requires setup prompt")
         self.__api_key = api_key
         self.__base_url = base_url
         self.__model = model
@@ -56,7 +56,7 @@ class RemoteAIAccessor:
         content = response.choices[0].message.content
         if not content:
             reason = response.choices[0].message.refusal
-            raise TestClerkGenerationError(
+            raise TestClerkAccessorError(
                 message=f"Failed to generate code: {reason}",
                 help_text="Please try again re-running the command",
             )

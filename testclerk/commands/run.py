@@ -7,7 +7,7 @@ import click
 from testclerk.client.accessor import ReportScanner
 from testclerk.client.executor import TestExecutor
 from testclerk.core.env import load_api_key
-from testclerk.core.errors import TestClerkGenerationError, TestClerkInputError
+from testclerk.core.errors import TestClerkAccessorError, TestClerkInputError
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +48,7 @@ def run_command(test_ids: List[str], output: Path, quiet: bool) -> None:
         click.echo(shell_output)
         click.echo(error_output)
     if exit_code != 0:
-        raise TestClerkGenerationError(
+        raise TestClerkAccessorError(
             message=f"Failed to generate tests: {error_output}",
             help_text=f"Please check the output for more information",
         )
@@ -59,7 +59,7 @@ def run_command(test_ids: List[str], output: Path, quiet: bool) -> None:
         with open(output, "w") as f:
             f.write(response)
     except IOError as e:
-        raise TestClerkGenerationError(
+        raise TestClerkAccessorError(
             message=f"Failed to generate test file: {e}",
         )
 
