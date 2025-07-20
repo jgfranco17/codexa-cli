@@ -4,7 +4,7 @@ from typing import List
 
 import click
 
-from testclerk.client.accessor import CodeGenerator
+from testclerk.client.accessor import ReportScanner
 from testclerk.client.executor import TestExecutor
 from testclerk.core.env import load_api_key
 from testclerk.core.errors import TestClerkGenerationError, TestClerkInputError
@@ -38,7 +38,7 @@ def run_command(test_ids: List[str], output: Path, quiet: bool) -> None:
             help_text=f"Rename the output file to a {output.stem}.md",
         )
     key = load_api_key()
-    client = CodeGenerator(key)
+    client = ReportScanner(key)
     if not test_ids:
         logger.info("No test IDs provided, running all tests")
 

@@ -6,6 +6,8 @@ import pytest
 
 from tests.tools import CommandRunner, MockLogger
 
+RESOURCES_DIR = Path(__file__).parent / "resources"
+
 
 @pytest.fixture
 def runner() -> CommandRunner:
@@ -26,8 +28,21 @@ def mock_datetime() -> Iterator[MagicMock]:
 @pytest.fixture
 def mock_pytest_file(tmp_path: Path) -> Iterator[Path]:
     """Mock a pytest file."""
-    template_file = Path(__file__).parent / "resources" / "pytest_test.tpl"
+    template_file = RESOURCES_DIR / "pytest_test.tpl"
     test_file = tmp_path / "test_example.py"
     contents = template_file.read_text()
     test_file.write_text(contents)
     yield test_file
+
+
+@pytest.fixture
+def mock_openai_client() -> Iterator[MagicMock]:
+    with patch("testclerk.client.accessor.OpenAI") as mock_client:
+        mock_client_instance = MagicMock()
+        mock_response = MagicMock()
+        mock_response.choices = [
+            MagicMock(message=MagicMock(content="## Summary\n- 2 passed, 1 failed"))
+        ]
+        mock_client_instance.chat.completions.create.return_value = mock_response
+        mock_client.return_value = mock_client_instance
+        yield mock_client

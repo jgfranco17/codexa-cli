@@ -3,7 +3,7 @@ from openai import OpenAI
 from testclerk.core.errors import TestClerkGenerationError
 
 
-class CodeGenerator:
+class ReportScanner:
     """Class for generating test code."""
 
     def __init__(self, api_key: str):
