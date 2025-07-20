@@ -5,6 +5,14 @@ from testclerk.core.errors import TestClerkEnvironmentError
 
 
 def load_api_key() -> str:
+    """Load the API key from the environment.
+
+    Raises:
+        TestClerkEnvironmentError: If the API key env variable not set
+
+    Returns:
+        str: LLM API key
+    """
     key = os.environ.get(Environment.API_KEY, None)
     if not key:
         raise TestClerkEnvironmentError(
