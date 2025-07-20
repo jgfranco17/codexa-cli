@@ -30,9 +30,12 @@ jobs:
           pip install poetry
           poetry install --with dev
 
-      - name: Run unit tests with coverage
+      - name: Run tests with coverage
         run: |
-          poetry run coverage run -m pytest
+          poetry run coverage run \
+            --source=testclerk \
+            --omit="*/__*.py,*/test_*.py,/tmp/*" \
+            -m pytest
           poetry run coverage report > coverage.txt
           poetry run coverage html
 
@@ -55,7 +58,7 @@ jobs:
           path: htmlcov/
 
   deploy:
-    name: Deploy coverage to GitHub Pages
+    name: Deploy coverage report
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages

@@ -26,5 +26,5 @@ pytest *ARGS:
 
 # Run test coverage
 coverage:
-    poetry run coverage run --source=testclerk --omit="*/__*.py,*/test_*.py" -m pytest
+    poetry run coverage run --source=testclerk --omit="*/__*.py,*/test_*.py,/tmp/*" -m pytest
     poetry run coverage report -m
