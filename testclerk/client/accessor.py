@@ -16,11 +16,20 @@ class RemoteAIAccessor:
         base_url: str = "https://openrouter.ai/api/v1",
         model: str = "deepseek/deepseek-r1:free",
     ) -> None:
+        if not api_key:
+            raise ValueError("API key is required")
+        if not prompt:
+            raise ValueError("Accessor requires setup prompt")
         self.__api_key = api_key
         self.__base_url = base_url
         self.__model = model
         self.__client = OpenAI(api_key=self.__api_key, base_url=self.__base_url)
         self.__setup_prompt = prompt
+
+    @property
+    def setup_prompt(self) -> str:
+        """Return the setup prompt."""
+        return self.__setup_prompt
 
     def make_request(self, message: str, timeout: float = 60.0) -> str:
         """Make a request to the LLM API.
