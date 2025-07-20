@@ -1,0 +1,24 @@
+Name                                                                             Stmts   Miss  Cover
+----------------------------------------------------------------------------------------------------
+/tmp/pytest-of-chino/pytest-14/test_executor_collect_all_test0/test_example.py       6      2    67%
+testclerk/__init__.py                                                                1      0   100%
+testclerk/client/__init__.py                                                         0      0   100%
+testclerk/client/accessor.py                                                        17     12    29%
+testclerk/client/executor.py                                                        68     20    71%
+testclerk/commands/__init__.py                                                       0      0   100%
+testclerk/commands/list.py                                                          25     11    56%
+testclerk/commands/run.py                                                           35     19    46%
+testclerk/core/constants.py                                                         11      0   100%
+testclerk/core/env.py                                                                8      0   100%
+testclerk/core/errors.py                                                            36      7    81%
+testclerk/core/handler.py                                                           23      3    87%
+testclerk/core/output.py                                                            18      2    89%
+testclerk/main.py                                                                   33      1    97%
+tests/__init__.py                                                                    0      0   100%
+tests/conftest.py                                                                   22      3    86%
+tests/test_commands.py                                                               9      0   100%
+tests/test_executor.py                                                               6      0   100%
+tests/test_utils.py                                                                 12      0   100%
+tests/tools.py                                                                      26      6    77%
+----------------------------------------------------------------------------------------------------
+TOTAL                                                                              356     86    76%
