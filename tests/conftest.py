@@ -10,7 +10,7 @@ from testclerk.core.output import ColorHandler
 from testclerk.main import cli
 
 
-class TestRunner:
+class CommandRunner:
     def __init__(self):
         self.__runner = CliRunner()
 
@@ -31,8 +31,8 @@ class MockLogger:
 
 
 @pytest.fixture
-def runner() -> TestRunner:
-    return TestRunner()
+def runner() -> CommandRunner:
+    return CommandRunner()
 
 
 @pytest.fixture

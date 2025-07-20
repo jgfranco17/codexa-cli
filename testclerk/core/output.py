@@ -14,8 +14,14 @@ class ColorHandler(logging.StreamHandler):
             logging.CRITICAL: Fore.RED,
         }
         color = colors.get(record.levelno, Fore.WHITE)
-        record.msg = f"{color}{record.msg}{Style.RESET_ALL}"
-        super().emit(record)
+        original_levelname = record.levelname
+        try:
+            # Replace levelname with colored version
+            record.levelname = f"{color}{record.levelname}{Style.RESET_ALL}"
+            super().emit(record)
+        finally:
+            # Restore original levelname to avoid side effects
+            record.levelname = original_levelname
 
 
 def print_error(message: str) -> None:

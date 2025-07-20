@@ -4,6 +4,7 @@ import click
 import colorama
 
 from testclerk import __version__
+from testclerk.commands.list import list_command
 from testclerk.commands.run import run_command
 from testclerk.core.handler import CliHandler
 from testclerk.core.output import ColorHandler
@@ -22,8 +23,12 @@ def __set_logger(level: int):
     logger.setLevel(log_level)
     handler = ColorHandler()
     handler.setLevel(log_level)
+
+    timestamp_format = "[%(asctime)s][%(levelname)s] %(message)s"
+    if log_level == logging.DEBUG:
+        timestamp_format = "[%(asctime)s][%(levelname)s] %(name)s: %(message)s"
     formatter = logging.Formatter(
-        fmt="[%(asctime)s][%(levelname)s] %(name)s: %(message)s",
+        fmt=timestamp_format,
         datefmt="%Y-%m-%d %H:%M:%S",
     )
     handler.setFormatter(formatter)
@@ -46,3 +51,4 @@ def cli(context: click.Context, verbose: int):
 
 
 cli.add_command(run_command)
+cli.add_command(list_command)
