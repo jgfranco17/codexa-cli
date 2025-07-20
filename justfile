@@ -1,24 +1,25 @@
 # project - Justfile utility
 
 # Print list of available recipe (this)
-default:
+_default:
     @just --list --unsorted
 
 # Run poetry install in all submodules
 install:
     poetry install
+    @echo "Installed dependencies!"
 
 # Run the CLI tool with Poetry
 testclerk *ARGS:
     @poetry run testclerk {{ ARGS }}
 
 # Build Docker image
-build-docker:
-    docker build -t project .
+docker-build:
+    docker build -t testclerk:0.0.0 .
 
 # Run CLI through Docker
-run-docker:
-    docker run --rm -e GITHUB_API_TOKEN="${GITHUB_API_TOKEN}" -e GITHUB_USERNAME="${GITHUB_USERNAME}" project --version
+docker-run *ARGS:
+    docker run --rm testclerk:0.0.0 {{ ARGS }}
 
 # Run pytest via poetry
 pytest *ARGS:

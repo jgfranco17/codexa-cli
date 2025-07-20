@@ -1,34 +1,31 @@
 # syntax=docker/dockerfile:1
 
 ARG PYTHON_VERSION=3.11
-FROM python:${PYTHON_VERSION}-slim as base
+FROM python:${PYTHON_VERSION}-slim AS base
+
+LABEL maintainer="Chino Franco <chino.franco@gmail.com>"
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV POETRY_VERSION=1.8.5
+
+RUN apt-get update && apt-get install -y \
+        --no-install-recommends \
+        curl \
+        build-essential \
+        git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -sSL https://install.python-poetry.org | python3 -
 
 WORKDIR /app
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
 
-# Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
-# Leverage a bind mount to requirements.txt to avoid having to copy them into
-# into this layer.
-RUN --mount=type=cache,target=/root/.cache/pip \
-    --mount=type=bind,source=requirements.txt,target=requirements.txt \
-    python -m pip install -r requirements.txt
+COPY README.md pyproject.toml poetry.lock* ./
+COPY testclerk ./testclerk
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi --only main \
+    && poetry build \
+    && pip install dist/*.whl
 
-# Switch to the non-privileged user to run the application.
-USER appuser
-
-COPY . .
-EXPOSE 8000
-
-CMD ["python3", "app.py", "--port", "8000"]
+ENTRYPOINT ["testclerk"]
+CMD ["--help"]

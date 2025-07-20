@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "testclerk"
 version = "0.0.1"
-description = "Python-based CLI tool for virtual test environments"
+description = "Python-based CLI for test report analysis"
 authors = ["Joaquin Franco <chino.franco@gmail.com>"]
 license = "MIT"
 readme = "README.md"
@@ -16,6 +16,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.10"
 click = "^8.1.7"
+pytest = "^8.2.2"
 colorama = "^0.4.6"
 requests = "^2.32.3"
 pyyaml = "^6.0.1"
@@ -25,7 +26,6 @@ tqdm = "^4.66.4"
 openai = "^1.97.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
 pre-commit = "^3.8.0"
 black = "^24.4.2"
 coverage = "^7.6.0"
