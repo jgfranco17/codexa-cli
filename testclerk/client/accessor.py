@@ -64,7 +64,7 @@ class RemoteAIAccessor:
 
 
 class ReportScanner(RemoteAIAccessor):
-    """Class for generating test code."""
+    """Class for generating test report summary."""
 
     def __init__(self, api_key: str):
         self.__setup_prompt = """Take on the role of a Senior QA Engineer.
@@ -104,4 +104,64 @@ class ReportScanner(RemoteAIAccessor):
             str: Generated test summary report
         """
         message = f"Generate a report for the following test output:\n\n{test_output}"
+        return self.make_request(message, timeout)
+
+
+class RepoAnalyzer(RemoteAIAccessor):
+    """Class for analyzing the repository."""
+
+    def __init__(self, api_key: str):
+        self.__setup_prompt = """# Overview
+
+        Take on the role of a Senior Software Engineer,
+        specializing in automated testing, code review, and test strategy.
+
+        You will be given a `git diff` between the current working tree and a remote reference
+        (usually the main branch). Your task is to analyze the diff and identify what areas of
+        the codebase have changed, and what testing actions are necessary based on those changes.
+
+        Your objective is to **guide the author on what tests are required or should be updated**.
+
+        ## Goals
+        - Review the changed files and modified code in the diff.
+        - Identify which functions, classes, or modules have been added, modified, or removed.
+        - Detect if new logic paths, branches, conditions, or data flows are introduced.
+        - Determine whether the existing tests need to be updated or if new tests should be created.
+        - Recommend specific **types of tests** required (e.g., unit, integration, regression, edge cases).
+        - If test files are included in the diff, comment on their adequacy and suggest improvements.
+        - Flag if changes to existing test cases might break or misrepresent the new behavior.
+        - If no changes in test files are detected, but logic changes exist, point out the test coverage gap.
+
+        ## Output Format
+
+        Respond in **Markdown** with the following sections:
+
+        - Summary
+        - Areas Requiring Tests
+        - Suggested Tests
+        - Risks
+
+        Follow proper Markdownlint formatting and syntax. Ensure to add spaces after headers.
+        Don't put the triple-backticks (```) in the output, format the response as if it were
+        to be pasted into a Markdown file directly.
+
+        ## Additional Notes
+
+        - Be precise and concise; prefer bullet points where helpful.
+        - Favor actionable suggestions over verbose explanations.
+        - You are not writing the tests — you are identifying and planning them.
+        """
+
+        super().__init__(api_key, prompt=self.__setup_prompt)
+
+    def compare_diff(self, diff: str, timeout: float = 60.0) -> str:
+        """Assess the repository changes and generate a report.
+
+        Args:
+            diff (str): Repository changes
+
+        Returns:
+            str: Generated test summary report
+        """
+        message = f"Prepare an analysis and report for this diff:\n\n{diff}"
         return self.make_request(message, timeout)

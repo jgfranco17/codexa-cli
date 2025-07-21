@@ -4,6 +4,7 @@ import click
 import colorama
 
 from testclerk import __version__
+from testclerk.commands.compare import compare_command
 from testclerk.commands.list import list_command
 from testclerk.commands.run import run_command
 from testclerk.core.handler import CliHandler
@@ -52,3 +53,4 @@ def cli(context: click.Context, verbose: int):
 
 cli.add_command(run_command)
 cli.add_command(list_command)
+cli.add_command(compare_command)
