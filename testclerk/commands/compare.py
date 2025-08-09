@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
     "-r",
     type=str,
     required=False,
-    default="os.getcwd()",
+    default="main",
     help="Remote branch to compare against",
 )
 @click.option(

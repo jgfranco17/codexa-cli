@@ -1,0 +1,145 @@
+<testsuite name="error_handling.Error Handling" tests="10" errors="0" failures="0" skipped="10" time="0.0" timestamp="2025-08-09T01:55:36.234872" hostname="Chinos-MacBook-Air.local"><testcase classname="error_handling.Error Handling" name="Handle OpenAI API errors" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle OpenAI API errors
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    Given the OpenAI API returns an error ... untested in 0.000s
+    When I run the command "run" ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the API error should be handled gracefully ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle invalid API key" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle invalid API key
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    Given the API key is invalid ... untested in 0.000s
+    When I run the command "run" ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the invalid API key should be detected ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle pytest execution failure" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle pytest execution failure
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    Given pytest execution fails ... untested in 0.000s
+    When I run the command "run" ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the pytest failure should be reported ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle git operation failure" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle git operation failure
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    Given git operations fail ... untested in 0.000s
+    When I run the command "compare" ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the git operation failure should be handled ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle invalid command arguments" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle invalid command arguments
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run an invalid command ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the error message should contain "No such command" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle missing required arguments" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle missing required arguments
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run a command with missing required arguments ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the error message should contain "Error" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle invalid output file format for run command" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle invalid output file format for run command
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run --output report.txt" ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the error message should contain "Output file must be a Markdown file" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle invalid output file format for compare command" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle invalid output file format for compare command
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare --output report.txt" ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the error message should contain "Output file must be a Markdown file" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle non-existent test files" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle non-existent test files
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run non_existent_test.py" ... untested in 0.000s
+    Then the command should fail with error ... untested in 0.000s
+    And the pytest failure should be reported ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="error_handling.Error Handling" name="Handle non-existent directory for list command" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Handle non-existent directory for list command
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "list --base-dir /non/existent/path" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

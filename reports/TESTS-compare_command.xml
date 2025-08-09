@@ -1,0 +1,159 @@
+<testsuite name="compare_command.Compare Command" tests="9" errors="0" failures="0" skipped="9" time="0.0" timestamp="2025-08-09T01:55:36.222117" hostname="Chinos-MacBook-Air.local"><testcase classname="compare_command.Compare Command" name="Compare with default settings" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with default settings
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with custom directory" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with custom directory
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare --directory /custom/path" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with custom reference branch" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with custom reference branch
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare --ref-branch feature-branch" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with custom output file" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with custom output file
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare --output diff_report.md" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "diff_report.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with quiet mode" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with quiet mode
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare --quiet" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with all custom options" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with all custom options
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare --directory /custom/path --ref-branch main --output custom_diff.md --quiet" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "custom_diff.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with invalid output file extension" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with invalid output file extension
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare --output report.txt" ... untested in 0.000s
+    Then the command should exit with code 1 ... untested in 0.000s
+    And the error output should contain "Output file must be a Markdown file" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with verbose output" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with verbose output
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare -v" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="compare_command.Compare Command" name="Compare with very verbose output" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Compare with very verbose output
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "compare -vv" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And git operations should be performed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+    And the output should contain "Recommendations for tests" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

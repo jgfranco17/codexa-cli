@@ -1,0 +1,221 @@
+<testsuite name="cli_help.CLI Help and Version" tests="7" errors="0" failures="7" skipped="0" time="0.019454" timestamp="2025-08-09T01:56:05.532096" hostname="Chinos-MacBook-Air.local"><testcase classname="cli_help.CLI Help and Version" name="Show main help" status="failed" time="0.01378"><failure type="AssertionError" message="Expected exit code 0, got 1">
+<![CDATA[
+Failing step: Then the command should exit with code 0 ... failed in 0.001s
+Location: features/cli_help.feature:13
+ASSERT FAILED: Expected exit code 0, got 1
+Traceback (most recent call last):
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/model.py", line 1991, in run
+    match.run(runner.context)
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/common_steps.py", line 42, in step_impl
+    assert context.result.exit_code == exit_code, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected exit code 0, got 1
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Show main help
+    Given I have a testclerk CLI tool ... passed in 0.000s
+    And I am in a temporary workspace ... passed in 0.000s
+    And I have mocked external API calls ... passed in 0.000s
+    When I run the command "--help" ... passed in 0.013s
+    Then the command should exit with code 0 ... failed in 0.001s
+    And the output should contain "TestClerk: CLI tool for test automation assistance" ... skipped in 0.000s
+    And the output should contain "run" ... skipped in 0.000s
+    And the output should contain "list" ... skipped in 0.000s
+    And the output should contain "compare" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="cli_help.CLI Help and Version" name="Show version" status="failed" time="0.001055"><failure type="AssertionError" message="Expected exit code 0, got 1">
+<![CDATA[
+Failing step: Then the command should exit with code 0 ... failed in 0.000s
+Location: features/cli_help.feature:21
+ASSERT FAILED: Expected exit code 0, got 1
+Traceback (most recent call last):
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/model.py", line 1991, in run
+    match.run(runner.context)
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/common_steps.py", line 42, in step_impl
+    assert context.result.exit_code == exit_code, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected exit code 0, got 1
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Show version
+    Given I have a testclerk CLI tool ... passed in 0.000s
+    And I am in a temporary workspace ... passed in 0.000s
+    And I have mocked external API calls ... passed in 0.000s
+    When I run the command "--version" ... passed in 0.001s
+    Then the command should exit with code 0 ... failed in 0.000s
+    And the output should contain "testclerk" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="cli_help.CLI Help and Version" name="Show run command help" status="failed" time="0.000905"><failure type="AssertionError" message="Expected exit code 0, got 1">
+<![CDATA[
+Failing step: Then the command should exit with code 0 ... failed in 0.000s
+Location: features/cli_help.feature:26
+ASSERT FAILED: Expected exit code 0, got 1
+Traceback (most recent call last):
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/model.py", line 1991, in run
+    match.run(runner.context)
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/common_steps.py", line 42, in step_impl
+    assert context.result.exit_code == exit_code, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected exit code 0, got 1
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Show run command help
+    Given I have a testclerk CLI tool ... passed in 0.000s
+    And I am in a temporary workspace ... passed in 0.000s
+    And I have mocked external API calls ... passed in 0.000s
+    When I run the command "run --help" ... passed in 0.000s
+    Then the command should exit with code 0 ... failed in 0.000s
+    And the output should contain "Analyze the contents of a file for testing" ... skipped in 0.000s
+    And the output should contain "--output" ... skipped in 0.000s
+    And the output should contain "--quiet" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="cli_help.CLI Help and Version" name="Show list command help" status="failed" time="0.00091"><failure type="AssertionError" message="Expected exit code 0, got 1">
+<![CDATA[
+Failing step: Then the command should exit with code 0 ... failed in 0.000s
+Location: features/cli_help.feature:33
+ASSERT FAILED: Expected exit code 0, got 1
+Traceback (most recent call last):
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/model.py", line 1991, in run
+    match.run(runner.context)
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/common_steps.py", line 42, in step_impl
+    assert context.result.exit_code == exit_code, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected exit code 0, got 1
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Show list command help
+    Given I have a testclerk CLI tool ... passed in 0.000s
+    And I am in a temporary workspace ... passed in 0.000s
+    And I have mocked external API calls ... passed in 0.000s
+    When I run the command "list --help" ... passed in 0.001s
+    Then the command should exit with code 0 ... failed in 0.000s
+    And the output should contain "List all available tests" ... skipped in 0.000s
+    And the output should contain "--base-dir" ... skipped in 0.000s
+    And the output should contain "--json" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="cli_help.CLI Help and Version" name="Show compare command help" status="failed" time="0.001089"><failure type="AssertionError" message="Expected exit code 0, got 1">
+<![CDATA[
+Failing step: Then the command should exit with code 0 ... failed in 0.000s
+Location: features/cli_help.feature:40
+ASSERT FAILED: Expected exit code 0, got 1
+Traceback (most recent call last):
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/model.py", line 1991, in run
+    match.run(runner.context)
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/common_steps.py", line 42, in step_impl
+    assert context.result.exit_code == exit_code, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected exit code 0, got 1
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Show compare command help
+    Given I have a testclerk CLI tool ... passed in 0.000s
+    And I am in a temporary workspace ... passed in 0.000s
+    And I have mocked external API calls ... passed in 0.000s
+    When I run the command "compare --help" ... passed in 0.001s
+    Then the command should exit with code 0 ... failed in 0.000s
+    And the output should contain "Generate smart analysis from diff comparison" ... skipped in 0.000s
+    And the output should contain "--directory" ... skipped in 0.000s
+    And the output should contain "--ref-branch" ... skipped in 0.000s
+    And the output should contain "--output" ... skipped in 0.000s
+    And the output should contain "--quiet" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="cli_help.CLI Help and Version" name="Show verbose help" status="failed" time="0.000862"><failure type="AssertionError" message="Expected exit code 0, got 1">
+<![CDATA[
+Failing step: Then the command should exit with code 0 ... failed in 0.000s
+Location: features/cli_help.feature:49
+ASSERT FAILED: Expected exit code 0, got 1
+Traceback (most recent call last):
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/model.py", line 1991, in run
+    match.run(runner.context)
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/common_steps.py", line 42, in step_impl
+    assert context.result.exit_code == exit_code, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected exit code 0, got 1
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Show verbose help
+    Given I have a testclerk CLI tool ... passed in 0.000s
+    And I am in a temporary workspace ... passed in 0.000s
+    And I have mocked external API calls ... passed in 0.000s
+    When I run the command "--help -v" ... passed in 0.000s
+    Then the command should exit with code 0 ... failed in 0.000s
+    And the output should contain "TestClerk: CLI tool for test automation assistance" ... skipped in 0.000s
+    And the output should contain "run" ... skipped in 0.000s
+    And the output should contain "list" ... skipped in 0.000s
+    And the output should contain "compare" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="cli_help.CLI Help and Version" name="Show very verbose help" status="failed" time="0.000853"><failure type="AssertionError" message="Expected exit code 0, got 1">
+<![CDATA[
+Failing step: Then the command should exit with code 0 ... failed in 0.000s
+Location: features/cli_help.feature:57
+ASSERT FAILED: Expected exit code 0, got 1
+Traceback (most recent call last):
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/model.py", line 1991, in run
+    match.run(runner.context)
+  File "/Users/chino/Library/Caches/pypoetry/virtualenvs/testclerk-nyUr7936-py3.12/lib/python3.12/site-packages/behave/matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/common_steps.py", line 42, in step_impl
+    assert context.result.exit_code == exit_code, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected exit code 0, got 1
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Show very verbose help
+    Given I have a testclerk CLI tool ... passed in 0.000s
+    And I am in a temporary workspace ... passed in 0.000s
+    And I have mocked external API calls ... passed in 0.000s
+    When I run the command "--help -vv" ... passed in 0.000s
+    Then the command should exit with code 0 ... failed in 0.000s
+    And the output should contain "TestClerk: CLI tool for test automation assistance" ... skipped in 0.000s
+    And the output should contain "run" ... skipped in 0.000s
+    And the output should contain "list" ... skipped in 0.000s
+    And the output should contain "compare" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

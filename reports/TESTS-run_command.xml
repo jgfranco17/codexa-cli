@@ -1,0 +1,136 @@
+<testsuite name="run_command.Run Command" tests="8" errors="0" failures="0" skipped="8" time="0.0" timestamp="2025-08-09T01:55:36.254523" hostname="Chinos-MacBook-Air.local"><testcase classname="run_command.Run Command" name="Run tests with default output" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run tests with default output
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+    And the file "report.md" should contain "Test Report" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="run_command.Run Command" name="Run tests with custom output file" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run tests with custom output file
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run --output custom_report.md" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "custom_report.md" ... untested in 0.000s
+    And the file "custom_report.md" should contain "Test Report" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="run_command.Run Command" name="Run tests with quiet mode" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run tests with quiet mode
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run --quiet" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="run_command.Run Command" name="Run specific test IDs" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run specific test IDs
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run test_file.py::test_function" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="run_command.Run Command" name="Run multiple test IDs" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run multiple test IDs
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run test1.py test2.py::test_function" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="run_command.Run Command" name="Run with invalid output file extension" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run with invalid output file extension
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run --output report.txt" ... untested in 0.000s
+    Then the command should exit with code 1 ... untested in 0.000s
+    And the error output should contain "Output file must be a Markdown file" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="run_command.Run Command" name="Run with verbose output" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run with verbose output
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run -v" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="run_command.Run Command" name="Run with very verbose output" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Run with very verbose output
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "run -vv" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And the API key should be loaded ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the OpenAI API should be called ... untested in 0.000s
+    And a file should be created at "report.md" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

@@ -1,0 +1,91 @@
+<testsuite name="list_command.List Command" tests="6" errors="0" failures="0" skipped="6" time="0.0" timestamp="2025-08-09T01:55:36.244072" hostname="Chinos-MacBook-Air.local"><testcase classname="list_command.List Command" name="List tests with default directory" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: List tests with default directory
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "list" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the output should contain "1." ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="list_command.List Command" name="List tests with custom base directory" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: List tests with custom base directory
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "list --base-dir /custom/tests" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the output should contain "1." ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="list_command.List Command" name="List tests in JSON format" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: List tests in JSON format
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "list --json" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the output should contain "{" ... untested in 0.000s
+    And the output should contain "}" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="list_command.List Command" name="List tests with verbose output" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: List tests with verbose output
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "list -v" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the output should contain "1." ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="list_command.List Command" name="List tests with very verbose output" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: List tests with very verbose output
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "list -vv" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+    And the output should contain "1." ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="list_command.List Command" name="List tests with non-existent directory" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: List tests with non-existent directory
+    Given I have a testclerk CLI tool ... untested in 0.000s
+    And I am in a temporary workspace ... untested in 0.000s
+    And I have mocked external API calls ... untested in 0.000s
+    When I run the command "list --base-dir /non/existent/path" ... untested in 0.000s
+    Then the command should exit with code 0 ... untested in 0.000s
+    And pytest should be executed ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

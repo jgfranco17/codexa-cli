@@ -24,6 +24,7 @@ share/python-wheels/
 *.egg
 *.egg-info
 MANIFEST
+.DS_Store
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -48,6 +49,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+*.output
 
 # pyenv
 .python-version
