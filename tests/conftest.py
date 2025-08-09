@@ -21,7 +21,7 @@ def logger() -> MockLogger:
 
 @pytest.fixture
 def mock_datetime() -> Iterator[MagicMock]:
-    with patch("testclerk.core.models.dt.datetime") as mock_datetime:
+    with patch("codexa.core.models.dt.datetime") as mock_datetime:
         yield mock_datetime
 
 
@@ -37,7 +37,7 @@ def mock_pytest_file(tmp_path: Path) -> Iterator[Path]:
 
 @pytest.fixture
 def mock_openai_client() -> Iterator[MagicMock]:
-    with patch("testclerk.client.accessor.OpenAI") as mock_client:
+    with patch("codexa.client.accessor.OpenAI") as mock_client:
         mock_client_instance = MagicMock()
         mock_response = MagicMock()
         mock_response.choices = [

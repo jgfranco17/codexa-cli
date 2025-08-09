@@ -5,10 +5,10 @@ from pathlib import Path
 
 import click
 
-from testclerk.client.accessor import ReportScanner
-from testclerk.client.executor import TestExecutor
-from testclerk.core.env import load_api_key
-from testclerk.core.errors import TestClerkAccessorError, TestClerkInputError
+from codexa.client.accessor import ReportScanner
+from codexa.client.executor import TestExecutor
+from codexa.core.env import load_api_key
+from codexa.core.errors import CodexaAccessorError, CodexaInputError
 
 logger = logging.getLogger(__name__)
 

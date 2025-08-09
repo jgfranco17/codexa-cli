@@ -3,14 +3,14 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "testclerk"
+name = "codexa"
 version = "0.0.1"
 description = "Python-based CLI for test report analysis"
 authors = ["Joaquin Franco <chino.franco@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "testclerk" }
+    { include = "codexa" }
 ]
 
 [tool.poetry.dependencies]
@@ -33,4 +33,4 @@ coverage = "^7.6.0"
 poetry = "^1.8.3"
 
 [tool.poetry.scripts]
-testclerk = "testclerk.main:cli"
+codexa = "codexa.main:cli"

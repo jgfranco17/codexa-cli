@@ -21,11 +21,11 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 WORKDIR /app
 
 COPY README.md pyproject.toml poetry.lock* ./
-COPY testclerk ./testclerk
+COPY codexa ./codexa
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi --only main \
     && poetry build \
     && pip install dist/*.whl
 
-ENTRYPOINT ["testclerk"]
+ENTRYPOINT ["codexa"]
 CMD ["--help"]

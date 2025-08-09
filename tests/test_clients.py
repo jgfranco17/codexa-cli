@@ -2,8 +2,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from testclerk.client.accessor import RemoteAIAccessor, ReportScanner
-from testclerk.core.errors import TestClerkAccessorError
+from codexa.client.accessor import RemoteAIAccessor, ReportScanner
+from codexa.core.errors import CodexaAccessorError
 
 
 def test_accessor_init_ok():
@@ -19,7 +19,7 @@ def test_accessor_init_ok():
     ],
 )
 def test_accessor_init_fail_missing_input(mock_api_key: str, mock_prompt: str):
-    with pytest.raises(TestClerkAccessorError):
+    with pytest.raises(CodexaAccessorError):
         _ = RemoteAIAccessor(api_key=mock_api_key, prompt=mock_prompt)
 
 
@@ -49,6 +49,6 @@ def test_analyze_tests_create_failure(mock_openai_client: MagicMock):
     mock_openai_client.return_value = mock_client_instance
 
     generator = ReportScanner(api_key="dummy-key")
-    with pytest.raises(TestClerkAccessorError, match="Failed to generate code"):
+    with pytest.raises(CodexaAccessorError, match="Failed to generate code"):
         _ = generator.analyze_tests(test_output="Some mock report output")
     mock_client_instance.chat.completions.create.assert_called_once()

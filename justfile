@@ -10,16 +10,16 @@ install:
     @echo "Installed dependencies!"
 
 # Run the CLI tool with Poetry
-testclerk *ARGS:
-    @poetry run testclerk {{ ARGS }}
+codexa *ARGS:
+    @poetry run codexa {{ ARGS }}
 
 # Build Docker image
 docker-build:
-    docker build -t testclerk:0.0.0 .
+    docker build -t codexa:0.0.0 .
 
 # Run CLI through Docker
 docker-run *ARGS:
-    docker run --rm testclerk:0.0.0 {{ ARGS }}
+    docker run --rm codexa:0.0.0 {{ ARGS }}
 
 # Run pytest via poetry
 pytest *ARGS:
@@ -27,5 +27,5 @@ pytest *ARGS:
 
 # Run test coverage
 coverage:
-    poetry run coverage run --source=testclerk --omit="*/__*.py,*/test_*.py,/tmp/*" -m pytest
+    poetry run coverage run --source=codexa --omit="*/__*.py,*/test_*.py,/tmp/*" -m pytest
     poetry run coverage report -m
