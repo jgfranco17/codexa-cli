@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from testclerk.client.executor import TestExecutor
+from codexa.client.executor import TestExecutor
 
 
 def test_executor_collect_all_tests(tmp_path: Path, mock_pytest_file: Path):

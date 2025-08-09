@@ -16,7 +16,7 @@ class ExitCode:
     OUTPUT_ERROR: Final[int] = 7
 
 
-class TestClerkBaseError(Exception):
+class CodexaBaseError(Exception):
     """A base CLI Error class.
 
     Contains a message, exit_code and help text show to the user
@@ -34,7 +34,7 @@ class TestClerkBaseError(Exception):
         super().__init__(self.message)
 
 
-class TestClerkRuntimeError(TestClerkBaseError):
+class CodexaRuntimeError(CodexaBaseError):
     """General CLI CLI Error class."""
 
     def __init__(
@@ -47,7 +47,7 @@ class TestClerkRuntimeError(TestClerkBaseError):
         super().__init__(self.message, ExitCode.RUNTIME_ERROR, help_text)
 
 
-class TestClerkInputError(TestClerkBaseError):
+class CodexaInputError(CodexaBaseError):
     """CLI user input error class."""
 
     def __init__(
@@ -60,7 +60,7 @@ class TestClerkInputError(TestClerkBaseError):
         super().__init__(self.message, ExitCode.INPUT_ERROR, help_text)
 
 
-class TestClerkEnvironmentError(TestClerkBaseError):
+class CodexaEnvironmentError(CodexaBaseError):
     """CLI environmnt error class."""
 
     def __init__(
@@ -73,7 +73,7 @@ class TestClerkEnvironmentError(TestClerkBaseError):
         super().__init__(self.message, ExitCode.ENVIRONMENT_ERROR, help_text)
 
 
-class TestClerkExecutionError(TestClerkBaseError):
+class CodexaExecutionError(CodexaBaseError):
     """CLI test execution error class."""
 
     def __init__(
@@ -86,7 +86,7 @@ class TestClerkExecutionError(TestClerkBaseError):
         super().__init__(self.message, ExitCode.GENERATION_ERROR, help_text)
 
 
-class TestClerkAccessorError(TestClerkBaseError):
+class CodexaAccessorError(CodexaBaseError):
     """CLI LLM generation error class."""
 
     def __init__(
@@ -99,7 +99,7 @@ class TestClerkAccessorError(TestClerkBaseError):
         super().__init__(self.message, ExitCode.GENERATION_ERROR, help_text)
 
 
-class TestClerkOutputError(TestClerkBaseError):
+class CodexaOutputError(CodexaBaseError):
     """CLI LLM generation error class."""
 
     def __init__(

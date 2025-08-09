@@ -4,8 +4,8 @@ from typing import Any, Dict
 
 import click
 
-from testclerk.core.errors import ExitCode, TestClerkBaseError
-from testclerk.core.output import print_warning
+from codexa.core.errors import CodexaBaseError, ExitCode
+from codexa.core.output import print_warning
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +23,7 @@ class CliHandler(click.Group):
         try:
             return super().invoke(ctx)
 
-        except TestClerkBaseError as err:
+        except CodexaBaseError as err:
             logger.exception(err)
             print_warning(f"{err.help_text}")
             sys.exit(err.exit_code)

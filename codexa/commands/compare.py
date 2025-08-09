@@ -5,10 +5,10 @@ from typing import Optional
 
 import click
 
-from testclerk.client.accessor import RepoAnalyzer
-from testclerk.client.versioning import compare_git_diff
-from testclerk.core.env import load_api_key
-from testclerk.core.errors import TestClerkInputError, TestClerkOutputError
+from codexa.client.accessor import RepoAnalyzer
+from codexa.client.versioning import compare_git_diff
+from codexa.core.env import load_api_key
+from codexa.core.errors import CodexaInputError, CodexaOutputError
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +51,7 @@ def compare_command(
 ) -> None:
     """Generate smart analysis from diff comparison.."""
     if output is not None and output.suffix != ".md":
-        raise TestClerkInputError(
+        raise CodexaInputError(
             message=f"Output file must be a Markdown file, got {output.suffix}",
             help_text=f"Rename the output file to a {output.stem}.md",
         )

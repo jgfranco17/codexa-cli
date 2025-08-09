@@ -1,7 +1,7 @@
 from pytest import MonkeyPatch, raises
 
-from testclerk.core.env import load_api_key
-from testclerk.core.errors import TestClerkEnvironmentError
+from codexa.core.env import load_api_key
+from codexa.core.errors import CodexaEnvironmentError
 
 
 def test_load_api_key_success(monkeypatch: MonkeyPatch):
@@ -15,5 +15,5 @@ def test_load_api_key_success(monkeypatch: MonkeyPatch):
 def test_load_api_key_not_set_failure(monkeypatch: MonkeyPatch):
     """Test that the API key is loaded correctly."""
     monkeypatch.delenv("TESTCLERK_API_KEY", raising=False)
-    with raises(TestClerkEnvironmentError):
+    with raises(CodexaEnvironmentError):
         _ = load_api_key()

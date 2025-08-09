@@ -5,8 +5,8 @@ from typing import List, Optional, Tuple
 import pytest
 from click.testing import CliRunner, Result
 
-from testclerk.core.output import ColorHandler
-from testclerk.main import cli
+from codexa.core.output import ColorHandler
+from codexa.main import cli
 
 
 class CommandRunner:

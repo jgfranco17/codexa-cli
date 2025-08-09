@@ -3,12 +3,12 @@ import logging
 import click
 import colorama
 
-from testclerk import __version__
-from testclerk.commands.compare import compare_command
-from testclerk.commands.list import list_command
-from testclerk.commands.run import run_command
-from testclerk.core.handler import CliHandler
-from testclerk.core.output import ColorHandler
+from codexa import __version__
+from codexa.commands.compare import compare_command
+from codexa.commands.list import list_command
+from codexa.commands.run import run_command
+from codexa.core.handler import CliHandler
+from codexa.core.output import ColorHandler
 
 colorama.init(autoreset=True)
 
@@ -46,7 +46,7 @@ def __set_logger(level: int):
     help="Increase verbosity. Use multiple times for more detail (e.g., -vv for debug).",
 )
 def cli(context: click.Context, verbose: int):
-    """TestClerk: CLI tool for test automation assistance."""
+    """Codexa: CLI tool for test automation assistance."""
     __set_logger(verbose)
     context.ensure_object(dict)
 

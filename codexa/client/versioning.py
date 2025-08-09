@@ -3,7 +3,7 @@ import os
 
 from git import Repo
 
-from testclerk.core.errors import TestClerkRuntimeError
+from codexa.core.errors import CodexaRuntimeError
 
 logger = logging.getLogger(__name__)
 
@@ -32,4 +32,4 @@ def compare_git_diff(remote_ref: str, repo_path: str = os.getcwd()) -> str:
         diff_index = head_commit.diff(remote_commit, create_patch=True)
         return "\n".join(str(d.diff) for d in diff_index if d.diff)
     except Exception as e:
-        raise TestClerkRuntimeError(f"Failed to get git diff: {e}")
+        raise CodexaRuntimeError(f"Failed to get git diff: {e}")

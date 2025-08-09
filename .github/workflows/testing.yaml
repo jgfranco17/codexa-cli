@@ -33,7 +33,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           poetry run coverage run \
-            --source=testclerk \
+            --source=codexa \
             --omit="*/__*.py,*/test_*.py,/tmp/*" \
             -m pytest
           poetry run coverage report > coverage.txt
@@ -43,7 +43,7 @@ jobs:
         if: always()
         run: |
           TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
-          echo "# TestClerk Unit Testing Report" >> $GITHUB_STEP_SUMMARY
+          echo "# Codexa Unit Testing Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "## Pytest coverage" >> $GITHUB_STEP_SUMMARY
           echo '```text' >> $GITHUB_STEP_SUMMARY
