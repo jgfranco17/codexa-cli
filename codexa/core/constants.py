@@ -17,4 +17,4 @@ class ConsoleIcons:
 class Environment:
     """Environment variables for user configuration."""
 
-    API_KEY: Final[str] = "TESTCLERK_API_KEY"
+    API_KEY: Final[str] = "CODEXA_API_KEY"
