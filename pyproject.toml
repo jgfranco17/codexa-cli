@@ -1,36 +1,29 @@
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]
+[project]
 name = "codexa"
-version = "0.0.1"
-description = "Python-based CLI for test report analysis"
-authors = ["Joaquin Franco <chino.franco@gmail.com>"]
-license = "MIT"
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
-packages = [
-    { include = "codexa" }
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.2.1",
+    "colorama>=0.4.6",
+    "docker>=7.1.0",
+    "gitpython>=3.1.45",
+    "jinja2>=3.1.6",
+    "openai>=1.99.9",
+    "pygithub>=2.7.0",
+    "pytest>=8.4.1",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.4",
+    "tqdm>=4.67.1",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-click = "^8.1.7"
-pytest = "^8.2.2"
-colorama = "^0.4.6"
-requests = "^2.32.3"
-pyyaml = "^6.0.1"
-jinja2 = "^3.1.4"
-docker = "^7.1.0"
-tqdm = "^4.66.4"
-openai = "^1.97.0"
-gitpython = "^3.1.44"
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "coverage>=7.10.3",
+    "pre-commit>=4.3.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-pre-commit = "^3.8.0"
-black = "^24.4.2"
-coverage = "^7.6.0"
-poetry = "^1.8.3"
-
-[tool.poetry.scripts]
+[project.scripts]
 codexa = "codexa.main:cli"
