@@ -7,7 +7,6 @@ LABEL maintainer="Chino Franco <chino.franco@gmail.com>"
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV POETRY_VERSION=1.8.5
 
 RUN apt-get update && apt-get install -y \
         --no-install-recommends \
@@ -16,16 +15,14 @@ RUN apt-get update && apt-get install -y \
         git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/root/.local/bin/:$PATH"
 
 WORKDIR /app
 
-COPY README.md pyproject.toml poetry.lock* ./
+COPY README.md pyproject.toml uv.lock* ./
 COPY codexa ./codexa
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi --only main \
-    && poetry build \
-    && pip install dist/*.whl
+RUN uv sync --locked --all-extras
 
 ENTRYPOINT ["codexa"]
 CMD ["--help"]

@@ -4,9 +4,10 @@
 _default:
     @just --list --unsorted
 
-# Run poetry install in all submodules
+# Install dependencies with UV
 install:
-    poetry install
+    uv venv --clear
+    uv sync --all-extras --dev
     @echo "Installed dependencies!"
 
 # Run the CLI tool with Poetry
