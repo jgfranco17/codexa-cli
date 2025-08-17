@@ -3,7 +3,7 @@ name: Testing
 on:
   push:
     branches:
-      - "main"
+      - "**"
   pull_request:
     branches:
       - "main"
@@ -19,25 +19,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install poetry
-          poetry install --with dev
+      - name: Setup workspace
+        uses: ./.github/actions/setup-workspace
 
       - name: Run tests with coverage
         run: |
-          poetry run coverage run \
+          uv run coverage run \
             --source=codexa \
             --omit="*/__*.py,*/test_*.py,/tmp/*" \
             -m pytest
-          poetry run coverage report > coverage.txt
-          poetry run coverage html
+          uv run coverage report > coverage.txt
+          uv run coverage html
 
       - name: Create GHA job summary
         if: always()

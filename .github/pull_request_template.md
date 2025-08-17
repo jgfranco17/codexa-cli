@@ -22,7 +22,7 @@
 The following checklist is used to ensure that the PR meets the project's quality standards.
 Please check each item as you complete it.
 
-- [ ] Funcationality changes have been tested locally
+- [ ] Functionality changes have been tested locally
 - [ ] Code changes are covered by `pytest`
 - [ ] Documentation updated
   - [ ] README.md updated
