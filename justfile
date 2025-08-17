@@ -12,7 +12,7 @@ install:
 
 # Run the CLI tool with Poetry
 codexa *ARGS:
-    @poetry run codexa {{ ARGS }}
+    @uv run codexa {{ ARGS }}
 
 # Build Docker image
 docker-build:
@@ -22,11 +22,11 @@ docker-build:
 docker-run *ARGS:
     docker run --rm codexa:0.0.0 {{ ARGS }}
 
-# Run pytest via poetry
+# Run pytest via uv
 pytest *ARGS:
-    poetry run pytest {{ ARGS }}
+    uv run pytest {{ ARGS }}
 
 # Run test coverage
 coverage:
-    poetry run coverage run --source=codexa --omit="*/__*.py,*/test_*.py,/tmp/*" -m pytest
-    poetry run coverage report -m
+    uv run coverage run --source=codexa --omit="*/__*.py,*/test_*.py,/tmp/*" -m pytest
+    uv run coverage report -m
